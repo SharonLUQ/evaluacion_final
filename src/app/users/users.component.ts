@@ -1,10 +1,22 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { MatColumnDef, MatTable, MatHeaderCell, MatCell, MatHeaderRow, MatHeaderRowDef, MatHeaderCellDef, MatCellDef, MatRow, MatRowDef } from '@angular/material/table';
 
 @Component({
   selector: 'app-users',
   standalone: true,
-  imports: [],
+  imports: [
+    MatColumnDef,
+    MatTable,
+    MatHeaderCell,
+    MatCell,
+    MatHeaderRow,
+    MatHeaderRowDef,
+    MatHeaderCellDef,
+    MatCellDef,
+    MatRow,
+    MatRowDef
+  ],
   templateUrl: './users.component.html',
   styleUrl: './users.component.css'
 })

@@ -8,11 +8,17 @@ import { UsersComponent } from './users/users.component';
 import { RouterModule, Routes } from '@angular/router';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTableModule } from '@angular/material/table';
+import { AuthGuard } from './auth-guard.guard';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: 'login', component: AuthComponent },
-  { path: 'dashboard', component: DashboardComponent }
+  { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard],
+    children: [
+      { path: 'posts', component: PostsComponent },
+      { path: 'users', component: UsersComponent },
+    ] 
+  },
 ];
 
 @NgModule({
